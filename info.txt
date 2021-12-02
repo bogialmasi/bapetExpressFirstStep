@@ -1,0 +1,10 @@
+az app.listen ELŐTT VAN a default út, ha nem oda megy akkor ignorálva lesz!
+
+app.get('*', (req,res)=>{
+    res.status(404).send("Nincs ilyen erőforrás")
+})
+
+utoljára kell, mert ha a * már vmi előtt van akkor után anem fogja keresni
+* kerül a path helyére. a * mindenre illeszkedik, ha megtalálja az express akkor mindenre hibát ad
+
+a status bizonyos esetekben automatikusan megtörténik
